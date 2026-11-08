@@ -1,10 +1,3 @@
----
-title: Chess game analysis pipeline
-date: 2026-11-06
-tags: [python, api, stockfish, data]
-publish: true
----
-
 # Chess game analysis pipeline
 
 ## Goal

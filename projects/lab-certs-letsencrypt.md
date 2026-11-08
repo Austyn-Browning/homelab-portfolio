@@ -1,10 +1,3 @@
----
-title: Real Let's Encrypt certs for every lab GUI
-date: 2026-11-07
-tags: [proxmox, pbs, cockpit, letsencrypt, acme, cloudflare, dns, tls]
-publish: true
----
-
 # Real Let's Encrypt certs for every lab GUI
 
 ## Goal

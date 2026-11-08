@@ -1,10 +1,3 @@
----
-title: Nightly LAN device monitoring
-date: 2026-11-06
-tags: [bash, networking, monitoring]
-publish: true
----
-
 # Nightly LAN device monitoring
 
 ## Goal

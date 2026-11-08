@@ -1,10 +1,3 @@
----
-title: GNOME black screen after a partial RHEL update
-date: 2026-11-06
-tags: [rhel, gnome, troubleshooting]
-publish: true
----
-
 # GNOME black screen after a partial RHEL update
 
 ## Goal

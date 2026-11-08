@@ -1,10 +1,3 @@
----
-title: Self-hosted E2E chat server on RHEL 10
-date: 2026-11-06
-tags: [rhel, selinux, firewalld, postgresql, cloudflare]
-publish: true
----
-
 # Self-hosted E2E chat server on RHEL 10
 
 ## Goal

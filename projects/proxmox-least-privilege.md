@@ -1,10 +1,3 @@
----
-title: Least-privilege Proxmox API access
-date: 2026-11-06
-tags: [proxmox, rbac, security]
-publish: true
----
-
 # Least-privilege Proxmox API access (dev vs prod)
 
 ## Goal
