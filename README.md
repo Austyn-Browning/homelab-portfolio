@@ -1,9 +1,9 @@
 ---
-title: Home Lab
+title: Austyn Browning's Home Lab
 publish: true
 ---
 
-# Home Lab
+# Austyn Browning's Home Lab
 
 Hands-on notes from my home lab: virtualization, Linux servers, networking, and automation, built while I study for the **Cisco CCNA (200-301)**.
 
