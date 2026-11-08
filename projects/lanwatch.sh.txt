@@ -1,0 +1,23 @@
+#!/bin/bash
+# Nightly read-only LAN sweep. One ping per address, then read the ARP table.
+# New MACs get a chat alert and are added to known.tsv.
+export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+D="$HOME/bot/lanwatch"; K="$D/known.tsv"; LOG="$D/lanwatch.log"; SC="$HOME/.config/chat-bot"  # holds server_host + bot_header
+touch "$K"
+for i in $(seq 1 254); do ping -c1 -W1 "${NET:-192.168.0}.$i" >/dev/null 2>&1 & done; wait
+new=""
+while read -r ip mac; do
+  grep -qi "^$mac" "$K" && continue
+  oui=$(echo "$mac" | tr -d : | cut -c1-6 | tr a-f A-F)
+  ven=$(grep -m1 "^$oui" /usr/share/hwdata/oui.txt 2>/dev/null | cut -f3)
+  printf '%s\t%s\t%s\t%s\n' "$mac" "$ip" "${ven:-unknown}" "$(date '+%F %T')" >> "$K"
+  new+="- $ip  $mac  (${ven:-unknown vendor})"$'\n'
+done < <(ip neigh show | awk '{for(i=1;i<NF;i++) if($i=="lladdr") print $1, tolower($(i+1))}')
+echo "$(date '+%F %T') sweep done, new=$(printf '%s' "$new" | grep -c .)" >> "$LOG"
+[ -z "$new" ] && exit 0
+[ "${1:-}" = "--baseline" ] && exit 0
+msg="New device(s) on the LAN since the last sweep:"$'\n'"$new"
+jq -n --arg c "$msg" '{app_id:"assistant",content:$c,bot_label:"LAN watch",include_admins:true,critical:false,inject:false}' \
+  | curl -sf -m 15 -o /dev/null -X POST "http://$(cat "$SC/server_host")/api/bot/event" \
+      -H "content-type: application/json" -H @"$SC/bot_header" --data-binary @- \
+  || echo "$(date '+%F %T') alert failed" >> "$LOG"
