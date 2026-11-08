@@ -19,7 +19,6 @@ Hands-on notes from my home lab: virtualization, Linux servers, networking, and 
 | [Least-privilege Proxmox API access](projects/proxmox-least-privilege.md) | Proxmox VE, RBAC, API tokens, SSH keys, dev/prod separation |
 | [GNOME black screen after a partial RHEL update](projects/rhel-gnome-black-screen.md) | Linux troubleshooting, dnf, GSettings schemas |
 | [Nightly LAN device monitoring](projects/lan-watch.md) | Bash, ARP, OUI lookup, cron, alerting |
-| [Chess game analysis pipeline](chess/analysis-pipeline.md) | Python, REST APIs, Stockfish/UCI, data analysis |
 
 ## CCNA
 - [Study plan](ccna/study-plan.md) and [labs](ccna/labs/) on real Cisco hardware
