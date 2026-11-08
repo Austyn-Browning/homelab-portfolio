@@ -14,6 +14,11 @@ Hands-on notes from my home lab: virtualization, Linux servers, networking, and 
 - **Remote access:** Twingate zero-trust connector, Cloudflare Tunnel
 - **Automation:** an always-on AI assistant VM that helps run and document the lab
 
+## Topology
+![Home lab topology](network/topology.png)
+
+Editable source: [network/topology.drawio](network/topology.drawio) (open in [diagrams.net](https://app.diagrams.net)).
+
 ## Projects
 | Project | Skills |
 |---|---|
