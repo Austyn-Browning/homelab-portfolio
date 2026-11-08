@@ -17,8 +17,6 @@ Hands-on notes from my home lab: virtualization, Linux servers, networking, and 
 ## Topology
 ![Home lab topology](network/topology.png)
 
-Editable source: [network/topology.drawio](network/topology.drawio) (open in [diagrams.net](https://app.diagrams.net)).
-
 ## Projects
 | Project | Skills |
 |---|---|
